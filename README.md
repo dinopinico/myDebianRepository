@@ -6,7 +6,7 @@ basic config:
 installing basic softwares:
 
   sudo apt install -y vim ranger git htop btop cmatrix nala 
-calcurse speedtest-cli s-tui curl wget
+calcurse speedtest-cli s-tui curl wget flameshot thunar dolphin
 
 changing repository:
 
@@ -41,7 +41,7 @@ installing TP LINK driver:
 installing steam
 
   https://store.steampowered.com/
-  sudo chmod -X <steam>
+  sudo chmod -x <steam>
   sudo dpkg -i <steam>
 
 installing VM
