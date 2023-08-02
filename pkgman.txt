@@ -1,0 +1,5 @@
+PACSTALL
+sudo bash -c "$(curl -fsSL https://pacstall.dev/q/install)"
+
+MIX
+sh <(curl -L https://nixos.org/nix/install) --daemon
