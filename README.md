@@ -47,6 +47,9 @@ installing steam
   installing logo-ls:
   https://github.com/Yash-Handa/logo-ls/releases
 
+  installing nerdfont:
+  https://www.nerdfonts.com/
+
 installing VM
 
 installing tor and VPN
