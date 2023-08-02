@@ -1,0 +1,37 @@
+links: https://docs.kinetica.com/7.1/install/nvidia_deb/
+https://www.nvidia.com/Download/index.aspx?lang=en-us
+
+-Disable Nouveau:
+
+cat <<EOF | sudo tee /etc/modprobe.d/blacklist-nouveau.conf
+blacklist nouveau
+blacklist lbm-nouveau
+options nouveau modeset=0
+alias nouveau off
+alias lbm-nouveau off
+EOF
+
+echo options nouveau modeset=0 | sudo tee -a /etc/modprobe.d/nouveau-kms.conf
+sudo update-initramfs -u
+
+-Update Grub to Blacklist Nouveau
+sudo cp /etc/default/grub /etc/default/grub.bak
+
+-In /etc/default/grub, change line GRUB_CMDLINE_LINUX="quiet" to GRUB_CMDLINE_LINUX="quiet rd.driver.blacklist=grub.nouveau rcutree.rcu_idle_gp_delay=1"
+
+-Rebuild Grub Config
+sudo grub2-mkconfig -o /boot/grub/grub.cfg
+
+-Dependences
+sudo apt-get -y install linux-headers-$(uname -r) make gcc-4.8
+sudo apt-get -y install acpid dkms
+
+-Close X Server
+sudo ps aux | grep "lightdm|gdm|kdm"
+sudo service lightdm stop
+sudo init 3
+
+sudo apt-get update && sudo apt-get install linux-headers-$(uname -r)
+sudo reboot now
+
+sh <nvidia driver>
