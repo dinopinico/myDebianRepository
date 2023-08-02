@@ -44,6 +44,9 @@ installing steam
   sudo chmod -x <steam>
   sudo dpkg -i <steam>
 
+  installing logo-ls:
+  https://github.com/Yash-Handa/logo-ls/releases
+
 installing VM
 
 installing tor and VPN
