@@ -6,7 +6,7 @@ basic config:
 installing basic softwares:
 
   sudo apt install -y vim ranger git htop btop cmatrix nala 
-calcurse speedtest-cli s-tui curl wget flameshot thunar musikcube feh cacaview mplayer
+calcurse speedtest-cli s-tui curl wget flameshot thunar feh mplayer
 
 changing repository:
 
